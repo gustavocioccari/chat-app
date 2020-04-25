@@ -12,6 +12,14 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+io.on('connection', (socket) => {
+
+
+  socket.on('disconnect', () => {
+
+  })
+});
+
 app.use(routes);
 app.use(cors());
 
